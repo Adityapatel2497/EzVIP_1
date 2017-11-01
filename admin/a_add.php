@@ -10,35 +10,22 @@
 	<link rel="stylesheet" href="../CSS/CSS2.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-  var d = new Date();      
-        
-   function twoDigitDate(d){
-      return ((d.getDate()).toString().length == 1) ? "0"+(d.getDate()).toString() : (d.getDate()).toString();
-    };
-        
-    function twoDigitMonth(d){
-     	return ((d.getMonth()+1).toString().length == 1) ? "0"+(d.getMonth()+1).toString() : (d.getMonth()+1).toString();
-    };    
-      
-    var today_ISO_date = d.getFullYear()+"-"+twoDigitMonth(d)+"-"+twoDigitDate(d); // in yyyy-mm-dd format
-        
-    document.getElementById('datepicker').setAttribute("value");
-       
-     var dd_mm_yyyy;
-     $("#datepicker").change( function(){
-       	changedDate = $(this).val(); //in yyyy-mm-dd format obtained from datepicker
-        var date = new Date(changedDate);
-        dd_mm_yyyy = twoDigitDate(date)+"-"+twoDigitMonth(date)+"-"+date.getFullYear(); // in dd-mm-yyyy format
-        $('#textbox').val(dd_mm_yyyy);
-        //console.log($(this).val());
-        //console.log("Date picker clicked");
-        });
-        
-    });
+<!-- Jquery -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-</script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      dateFormat: 'dd-mm-yy',
+      changeMonth: true,
+      changeYear: true,
+      yearRange: '1980:2005'
+    });
+  } );
+  </script>
 </head>
 <body>
 <div class="container">
@@ -69,7 +56,7 @@
 						<tr><td class="td" align="center"> Last Name :*</td><td><input type="text" pattern="[A-Za-z]{1,}" placeholder="Enter Last Name." name="lname" required></input></td></tr>
 						<tr><td class="td" align="center"> Email :*</td><td><input type="email" placeholder="Enter Email." name="email" required></input></td></tr>
 						<tr><td class="td" align="center"> UserName :*</td><td><input type="text" name="uname" placeholder="Enter UserName." name="uname" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,8}$" required></input></td></tr>
-						<tr><td class="td" align="center"> DOB :*</td><td><input type="date" id="datepicker" data-formate="dd-mm-yyyy" placeholder="Enter DOB (dd-mm-yyyy)." name="dob" required></input></td></tr>
+						<tr><td class="td" align="center"> DOB :*</td><td><input type="text" id="datepicker" data-formate="dd-mm-yyyy" placeholder="Enter DOB (dd-mm-yyyy)." name="dob" required></input></td></tr>
 						<tr><td class="td" align="center"> Contact No. :*</td><td><input type="text" name="cno" pattern="[0-9]{10}" placeholder="000 000 0000" name="cno" required=></input></td></tr>
 						<tr><td class="td" align="center"> Password :*</td><td><input type="password" name="pass" placeholder="Enter password." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></input></td></tr>
 						<tr><td class="td" align="center"> Confirm Password:*</td><td><input type="password" name="pass2" placeholder="ReEnter password." required></input></td></tr>
