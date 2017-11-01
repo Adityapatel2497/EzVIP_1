@@ -54,7 +54,7 @@
 	</table>
 </form>
 <hr>
-<table id="report" border="0" cellspacing="5" cellpadding="2" align="center">
+<table id="report" border="1" cellspacing="5" cellpadding="2" align="center">
 <thead>
 	<tr>
 		<th> Sno </th>

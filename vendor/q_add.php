@@ -10,23 +10,49 @@
 	<title>EZVIP | ADD QUOTATION</title>
 	<link rel="stylesheet" href="../CSS/CSS2.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all">
-<script type="text/javascript">
-	var dateToday = new Date();
-	var dates = $("#from, #to").datepicker({
-    defaultDate: "+1w",
-    changeMonth: true,
-    numberOfMonths: 12,
-    minDate: dateToday,
-    onSelect: function(selectedDate) {
-        var option = this.id == "from" ? "minDate" : "maxDate",
-            instance = $(this).data("datepicker"),
-            date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
-        dates.not(this).datepicker("option", option, date);
-    }
-});
-</script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+
+        <!-- Date picker JS-->
+
+        <script>
+            $(function() {
+                var dateFormat = "dd-mm-yy",
+                    from = $("#from")
+                    .datepicker({
+                        //defaultDate: "+1w",
+                        minDate:0,
+                        changeMonth: true,
+                        numberOfMonths: 3,
+                        changeMonth: true,
+                        changeYear: true
+                    })
+                    .on("change", function() {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                    to = $("#to").datepicker({
+                    	minDate:0,
+                        changeMonth: true,
+                        numberOfMonths: 3,
+                        changeMonth: true,
+                        changeYear: true
+                    })
+                    .on("change", function() {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+                function getDate(element) {
+                    var date;
+                    try {
+                        date = $.datepicker.parseDate(dateFormat, element.value);
+                    } catch (error) {
+                        date = null;
+                    }
+                    return date;
+                }
+            });
+        </script>
 </head>
 <body>
 <div class="container">
