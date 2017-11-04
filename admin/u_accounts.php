@@ -51,7 +51,7 @@
 <tbody>
 	<?php
 		include('connect.php');
-		$result = $db->prepare(" SELECT Sno, fname, lname, email, uname, dob, contact, type FROM usertable");
+		$result = $db->prepare(" SELECT Sno, fname, lname, email, uname, dob, contact, type FROM usertable ORDER BY Sno ASC");
 		$result->execute();
 		for($i=0; $row = $result->fetch(); $i++){
 	?>

@@ -24,13 +24,13 @@
 		
 				
 					<div class="dropdown">
-						<button  class="dropbtn fa fa-plus-square"><a href="q_add.php"> Add Accounts </a></button>
+						<button  class="dropbtn fa fa-plus-square"><a href="q_add.php"> Add Quotation </a></button>
 					</div>
 					<div class="dropdown">
-					  <button class="dropbtn fa fa-pencil "><a href="u_quotation.php"> Update Accounts </a></button>
+					  <button class="dropbtn fa fa-pencil "><a href="u_quotation.php"> Update Quotation </a></button>
 					  </div>
 					<div class="dropdown">
-					  <button class="dropbtn fa fa-trash-o"><a href="d_quotaion.php"> Delete Accounts </a></button>
+					  <button class="dropbtn fa fa-trash-o"><a href="d_quotaion.php"> Delete Quotation </a></button>
 					</div>
 					</center>
 					<hr>

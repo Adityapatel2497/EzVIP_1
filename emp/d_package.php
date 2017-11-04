@@ -64,7 +64,7 @@
 </table>
 <form action="delete.php" method="POST">
 	<table align="center">
-		<tr><td style="width: auto;"><input type="text" name="pno" pattern="[0-9]{1,}" placeholder="Select Package Number from above Table!"></td><td style="width: auto;"><input type="submit" value="Delete" style="width: 100%;"></td></tr>
+		<tr><td style="width: auto;"><input type="text" name="pno" pattern="[0-9]{1,}" placeholder="Select Package Number from above Table!" required></td><td style="width: auto;"><input type="submit" value="Delete" style="width: 100%;"></td></tr>
 	</table>
 </form>
 <hr>

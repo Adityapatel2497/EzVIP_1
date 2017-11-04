@@ -20,26 +20,26 @@
         <script>
             $(function() {
                 var dateFormat = "dd-mm-yy",
-                    from = $("#from")
+                    from = $("profile.phpfrom")
                     .datepicker({
                         //defaultDate: "+1w",
                         minDate:0,
                         changeMonth: true,
-                        numberOfMonths: 3,
+                        numberOfMonths: 2,
                         changeMonth: true,
                         changeYear: true
                     })
-                    .on("change", function() {
+                    .on("change", function() {yy
                         to.datepicker("option", "minDate", getDate(this));
                     }),
                     to = $("#to").datepicker({
                     	minDate:0,
                         changeMonth: true,
-                        numberOfMonths: 3,
+                        numberOfMonths: 2,
                         changeMonth: true,
                         changeYear: true
                     })
-                    .on("change", function() {
+                    .on("change", function() {yyyyyyyyyyyyyyyyyyy
                         from.datepicker("option", "maxDate", getDate(this));
                     });
                 function getDate(element) {
@@ -59,7 +59,7 @@
 <div class="center">
 <center>
 <a href="v_home.php" ><label class="fa fa-home"> HOME </label></a>
-<a href="#"><label class="fa fa-vcard"> PROFILE </label></a>
+<a href="profile.php"><label class="fa fa-vcard"> PROFILE </label></a>
 <a href="v_quotation.php" ><label class="fa fa-pencil-square-o"> QUOTATION </label></a>
 <a href="logout.php" ><label class="fa fa-power-off"> LOGOUT </label></a>
 <hr>
@@ -68,13 +68,13 @@
 		
 				
 					<div class="dropdown">
-						<button  class="dropbtn fa fa-plus-square"><a href="q_add.php"> Add Accounts </a></button>
+						<button  class="dropbtn fa fa-plus-square"><a href="q_add.php"> Add Quotation </a></button>
 					</div>
 					<div class="dropdown">
-					  <button class="dropbtn fa fa-pencil "><a href="u_quotation.php"> Update Accounts </a></button>
+					  <button class="dropbtn fa fa-pencil "><a href="u_quotation.php"> Update Quotation </a></button>
 					  </div>
 					<div class="dropdown">
-					  <button class="dropbtn fa fa-trash-o"><a href="d_quotaion.php"> Delete Accounts </a></button>
+					  <button class="dropbtn fa fa-trash-o"><a href="d_quotaion.php"> Delete Quotation </a></button>
 					</div>
 				</center>
 	<hr>

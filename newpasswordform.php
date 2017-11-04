@@ -23,9 +23,10 @@
       <h1>Welcome to EzVip</h1>
       <h2>Please Login</h2>
       <form action="login.php" method="POST">
-        <input type="text" name="username" id="user" placeholder="Username"  autocomplete="off" required/><br>
-        <input type="password" name="pass" id="pass" placeholder="Password" autocomplete="off" required/><br>
-        <input type="submit" name="login" value="Login"/><center><p><a href="forget.php">Forget Password?</a></p></center>
+      <input type="email" name="email" placeholder="Enter Registered Email Id."  autocomplete="off" required/><br>
+        <input type="password" name="pass1" placeholder="Enter New Password"  autocomplete="off" required/><br>
+        <input type="password" name="pass2" placeholder="Confirm New Password" autocomplete="off" required/><br>
+        <input type="submit" name="insert" value="Login"/><center><p><a href="forget.php">Forget Password?</a></p></center>
       </form>
     </div>
   </div>

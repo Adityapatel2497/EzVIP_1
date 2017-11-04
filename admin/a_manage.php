@@ -1,8 +1,3 @@
-<?php 
-	session_start();
-	if(isset($_SESSION['username']))
-	{
-?>
 
 <!DOCTYPE html>
 <html>
@@ -39,10 +34,3 @@
 	</div>
 </body>
 </html>
-<?php
-} 
-	else
-	{ 
-        header('Location: ../');	
-    } 
-?>

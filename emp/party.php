@@ -25,6 +25,21 @@
 			  border-radius:  18px 18px 18px 18px;
 		}
 	</style>
+	<!-- Jquery -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      dateFormat: 'dd-mm-yy',
+      changeMonth: true,
+      changeYear: true,
+      yearRange: '1980:2005'
+    });
+  } );
+  </script>
 	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
@@ -105,7 +120,7 @@
 						</td></tr>
 						<tr><td class="td" align="center"> Set Entrance Charges :*</td><td><input type="text" name="charge" pattern="[0-9]{4,}" placeholder="Set Charges For Package." required></input></td></tr>
 						<tr><td class="td" align="center"> Set Guest Limit :*</td><td><input type="text" name="guest" pattern="[0-9]{2,4}" placeholder="Set Guest Limit For Package." required></input></td></tr>
-						<tr><td class="td" align="center"> Set Date :* </td><td><input type="date" data-format="dd/MM/yyy" id="datepicker" placeholder="dd-MM-yyyy" name="date" required/></td></tr>
+						<tr><td class="td" align="center"> Set Date :* </td><td><input type="text" id="datepicker" data-format="dd/MM/yyy" name="date" required/></td></tr>
 						<tr><td class="td" align="center"> Time :* </td><td><input type="time" id="timepicker" name="time" required></td></tr>
 						<tr><td></td><td><input type="submit" name="party" value="ADD"> <input type="reset" name="reset"  value="RESET"></td></tr> 
 					</table>

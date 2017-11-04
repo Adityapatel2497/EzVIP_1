@@ -18,16 +18,14 @@ $sql = "UPDATE quotation
 $q = $db->prepare($sql);
 $q->execute();
 if ($q) {
-		echo '<script language="javascript">';
-		echo 'alert("Update Successful")';
-		echo '</script>';
-header("location: u_quotation.php");
+		echo "<script language='javascript'>alert('Update Succesful!!');
+							window.location.href='u_quotaion.php';
+					 		</script>";
 }
 else{
-			echo '<script language="javascript">';
-			echo 'alert("Failed")';
-			echo '</script>';
-header("location: u_quotation.php");
+			echo "<script language='javascript'>alert('ERROR!!');
+							window.location.href='u_quotaion.php';
+					 		</script>";
 }
 else
 	{ 

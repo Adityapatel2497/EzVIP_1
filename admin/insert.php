@@ -27,9 +27,9 @@ try
 			$query->execute();
 			if($query->rowCount() > 0 )
 			{	
-				echo '<script language="javascript">';	
-				echo 'alert("This email ID is already registered")';
-				echo '</script>';	
+				echo "<script language='javascript'>alert('Already Registeration Succesful!!');
+							window.location.href='a_add.php';
+					 		</script>";
 			}
 			else{
 				$pass = md5($pass);
@@ -38,16 +38,16 @@ try
 					(NULL,'$fname','$lname','$email','$uname','$dob','$phone','$pass','$type')";
 						if ($conn->query($sql))
 						{
-							echo '<script language="javascript">';
-							echo 'alert("Account Registration Successful")';
-							echo '</script>';
-							echo "header('Location: a_add.html');";
+							echo "<script language='javascript'>alert('Registeration Succesful!!');
+							window.location.href='a_add.php';
+					 		</script>";
+							
 						}
 			  			else
 						{
-							echo '<script language="javascript">';
-							echo 'alert("Account Registration Failed")';
-							echo '</script>';
+							echo "<script language='javascript'>alert('Error!!');
+							window.location.href='a_add.php';
+					 		</script>";
 						}
 			}
 			}

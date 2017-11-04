@@ -19,16 +19,14 @@ $sql = "UPDATE usertable
 $q = $db->prepare($sql);
 $q->execute();
 if ($q) {
-		echo '<script language="javascript">';
-		echo 'alert("Update Successful")';
-		echo '</script>';
-header("location: u_accounts.php");
+		echo "<script language='javascript'>alert('Update Succesful!!');
+							window.location.href='u_accounts.php';
+					 		</script>";
 }
 else{
-			echo '<script language="javascript">';
-			echo 'alert("Failed")';
-			echo '</script>';
-header("location: u_accounts.php");
+			echo "<script language='javascript'>alert('Package Succesfully Created!!');
+							window.location.href='u_accounts.php';
+					 		</script>";
 }
 } 
 	else

@@ -16,7 +16,7 @@
 <div class="center">
 <center>
 <a href="v_home.php" ><label class="fa fa-home"> HOME </label></a>
-<a href="#"><label class="fa fa-vcard"> PROFILE </label></a>
+<a href="profile.php"><label class="fa fa-vcard"> PROFILE </label></a>
 <a href="v_quotation.php" ><label class="fa fa-pencil-square-o"> QUOTATION </label></a>
 <a href="logout.php" ><label class="fa fa-power-off"> LOGOUT </label></a>
 <hr>

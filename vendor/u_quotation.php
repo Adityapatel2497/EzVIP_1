@@ -16,7 +16,7 @@
 <div class="center">
 <center>
 <a href="v_home.php" ><label class="fa fa-home"> HOME </label></a>
-<a href="#"><label class="fa fa-vcard"> PROFILE </label></a>
+<a href="profile.php"><label class="fa fa-vcard"> PROFILE </label></a>
 <a href="v_quotation.php" ><label class="fa fa-pencil-square-o"> QUOTATION </label></a>
 <a href="logout.php" ><label class="fa fa-power-off"> LOGOUT </label></a>
 <hr>
@@ -25,13 +25,13 @@
 		
 				
 					<div class="dropdown">
-						<button  class="dropbtn fa fa-plus-square"><a href="q_add.php"> Add Accounts </a></button>
+						<button  class="dropbtn fa fa-plus-square"><a href="q_add.php"> Add Quotation </a></button>
 					</div>
 					<div class="dropdown">
-					  <button class="dropbtn fa fa-pencil "><a href="u_quotation.php"> Update Accounts </a></button>
+					  <button class="dropbtn fa fa-pencil "><a href="u_quotation.php"> Update Quotation </a></button>
 					  </div>
 					<div class="dropdown">
-					  <button class="dropbtn fa fa-trash-o"><a href="d_quotaion.php"> Delete Accounts </a></button>
+					  <button class="dropbtn fa fa-trash-o"><a href="d_quotaion.php"> Delete Quotation </a></button>
 					</div>
 					</center>
 					<hr>

@@ -12,16 +12,14 @@ $sql = "DELETE FROM usertable WHERE Sno='$id'";
 $q = $db->prepare($sql);
 $q->execute();
 if ($q) {
-		echo '<script language="javascript">';
-		echo 'alert("Delete Successful")';
-		echo '</script>';
-header("location: d_accounts.php");
+	echo "<script language='javascript'>alert('Delete` Succesful!!');
+							window.location.href='d_accounts.php';
+					 		</script>";
 }
 else{
-			echo '<script language="javascript">';
-			echo 'alert("Failed")';
-			echo '</script>';
-header("location: d_accounts.php");
+			echo "<script language='javascript'>alert('ERROR!!');
+							window.location.href='d_accounts.php';
+					 		</script>";
 }
 } 
 	else

@@ -25,7 +25,7 @@ body
     position: relative;
     width: 100%;
 }
-input[type=text], input[type=password], select
+input[type=text], input[type=password], input[type=email]
 {
     position: relative;
     width: 100%;
@@ -80,76 +80,11 @@ h2{
 h3{
     font-size: 25px;
 }
-.dropbtn {
-    background-color: #e9ece5;
-    color: #3b3a36;
-    padding: 8px 14px;
-    width: 200%;
-    font-size: 22px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 30px 30px 30px 30px;
-}
 
-.dropdown {
-
-    margin-right: 76px; 
-    margin-top: 16px;
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-
-    display: none;
-    position: absolute;
-    background-color: #e9ece5;
-    min-width: 190px;
-    box-shadow: 0px 8px 16px 0px;
-    z-index: 1;
-    font-size: 15px;
-    border-radius: 20px 20px 20px 20px;
-
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 6px 16px;
-    text-decoration: none;
-    display: block;
-    border-radius: 20px 20px 20px 20px;
-}
-
-.dropdown-content a:hover 
-{
-  background-color: #c0dfd9
-
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #c0dfd9;
-}
 .fa{
   font-weight: bold;
 }
-[a:link, a:visited]{
 
-    background-color: transparent;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    color: #3b3a36;
-    border: 0px;
-    border-radius: 30px 30px 30px 30px; 
-
-}
 hr{
     display: block;
     margin-bottom: 0.5em;

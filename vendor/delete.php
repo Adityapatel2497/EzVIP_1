@@ -11,16 +11,14 @@ $sql = "DELETE FROM quotation WHERE Qno='$Qno'";
 $q = $db->prepare($sql);
 $q->execute();
 if ($q) {
-		echo '<script language="javascript">';
-		echo 'alert("Delete Successful")';
-		echo '</script>';
-		header("location: d_quotaion.php");
+		echo "<script language='javascript'>alert('Delete Succesful!!');
+							window.location.href='d_quotaion.php';
+					 		</script>";
 }
 else{
-			echo '<script language="javascript">';
-			echo 'alert("Failed")';
-			echo '</script>';
-}
+			echo "<script language='javascript'>alert('ERROR');
+							window.location.href='d_quotaion.php';
+					 		</script>";
 else
 	{ 
         header('Location: ../');	
