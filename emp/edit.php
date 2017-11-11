@@ -11,9 +11,12 @@ session_start();
 	$com = $_POST['com'];
 	$total = $_POST['total'];
 	$pno = $_POST['pno'];
+	$sd = $_POST['sd'];
+	$ld = $_POST['ld'];
 // query
 $sql = "UPDATE package 
-        SET pname='$pname', club='$club',artist='$artist', com='$com', total='$total'
+        SET pname='$pname',short_desc = '$sd',long_desc= '$ld',club='$club',artist='$artist', com='$com', com_t =
+        (((SELECT rate as club from vendor WHERE vname='$club')+(SELECT rate as artist FROM vendor WHERE vname='$artist'))*($com/100)),total = 	((((SELECT rate as club from vendor WHERE vname='$club')+(SELECT rate as artist FROM vendor WHERE vname='$artist'))*($com/100))+((SELECT rate as club from vendor WHERE vname='$club')+(SELECT rate as artist FROM vendor WHERE vname='$artist'))))
 		WHERE pno='$pno'";
 $q = $db->prepare($sql);
 $q->execute();

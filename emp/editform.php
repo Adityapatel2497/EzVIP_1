@@ -22,6 +22,18 @@
 			  box-shadow: 0;
 			  border-radius:  18px 18px 18px 18px;
 		}
+		textarea{
+		width: 100%;
+		height: 100px;
+		padding: 12px 20px;
+		box-sizing: border-box;
+		resize: none;
+		position: relative;
+		background-color: #e9ece5;
+		font-size: 15px;color: #3b3a36;
+		font-weight: bold;border: 0px;
+		border-radius:  18px 18px 18px 18px;
+}
 	</style>
 </head>
 <body>
@@ -63,30 +75,18 @@
 <tr><td class="td" align="center">Serial No. :</td><td><input style="background: transparent;cursor: no-drop;" type="text" name="pno" value="<?php echo $pno; ?>"></td></tr>
 <tr><td class="td" align="center">Package Name:</td><td>
 <input type="text" name="pname" pattern="[A-Z a-z]{1,}" value="<?php echo $row['pname']; ?>" /></td></tr>
+<tr><td align="justify">Short Description : </td><td><textarea  name="sd" maxlength="50"><?php echo $row['short_desc']; ?></textarea></td></tr>
+<tr><td align="justify">Long Description : </td><td><textarea  name="ld"><?php echo $row['long_desc']; ?></textarea></td></tr>
 <tr><td class="td" align="center">Club Name :</td><td>
-<select name="club">
-									<option value="<?php echo $row['club']; ?>" hidden/><?php echo $row['club']; ?></option> 
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
+<input type="text" name="club" value="<?php echo $row['club']; ?>" readonly>
 <!--input type="text" name="lname" pattern="[A-Za-z]{1,}" value="<?php //echo $row['lname']; ?>" /--></td></tr>
 <tr><td class="td" align="center">Artist :</td><td>
-<select name="artist">
-									<option value="<?php echo $row['artist']; ?>" hidden/><?php echo $row['artist']; ?></option> 
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
+<input type="text" name="artist" value="<?php echo $row['artist']; ?>" readonly>
 <!--input type="email" name="email" value="<?php //echo $row['email']; ?>" /--></td></tr>
 <tr><td class="td" align="center">Commision % :</td><td>
 <input type="text" name="com" pattern="[0-9]{2,3}" value="<?php echo $row['com']; ?>" /></td></tr>
 <tr><td class="td" align="center">Total:</td><td>
-<input type="text" name="total" value="<?php echo $row['total']; ?>" /></td></tr>
+<input type="text" name="total" value="<?php echo $row['total']; ?>" readonly/></td></tr>
 <tr><td colspan="2" align="center"><input type="submit" value="Update" /></td></tr>
 </table>
 </form>

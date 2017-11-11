@@ -36,7 +36,7 @@
       dateFormat: 'dd-mm-yy',
       changeMonth: true,
       changeYear: true,
-      yearRange: '1980:2005'
+      yearRange: 'CURRENTDATE:3000'
     });
   } );
   </script>
@@ -122,6 +122,8 @@
 						<tr><td class="td" align="center"> Set Guest Limit :*</td><td><input type="text" name="guest" pattern="[0-9]{2,4}" placeholder="Set Guest Limit For Package." required></input></td></tr>
 						<tr><td class="td" align="center"> Set Date :* </td><td><input type="text" id="datepicker" data-format="dd/MM/yyy" name="date" required/></td></tr>
 						<tr><td class="td" align="center"> Time :* </td><td><input type="time" id="timepicker" name="time" required></td></tr>
+						<tr><td align="justify">Short Description :*</td><td><textarea name="sd" placeholder="Enter Short Description of Quotation." style="width: 100%;height: 100px;padding: 12px 20px;box-sizing: border-box;resize: none;position: relative;background-color: #e9ece5;font-size: 15px;color: #3b3a36;border: 0px;border-radius:  18px 18px 18px 18px;" maxlength="50"></textarea></td></tr>
+						<tr><td align="justify">Long Description :*</td><td><textarea name="ld" placeholder="Enter Long Description of Quotation." style="width: 100%;height: 100px;padding: 12px 20px;box-sizing: border-box;resize: none;position: relative;background-color: #e9ece5;font-size: 15px;color: #3b3a36;border: 0px;border-radius:  18px 18px 18px 18px;" maxlength="50"></textarea></td></tr>
 						<tr><td></td><td><input type="submit" name="party" value="ADD"> <input type="reset" name="reset"  value="RESET"></td></tr> 
 					</table>
 				</form>

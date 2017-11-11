@@ -1,4 +1,8 @@
-
+<?php
+	session_start();
+	if(isset($_SESSION['username']))
+	{
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,3 +38,10 @@
 	</div>
 </body>
 </html>
+<?php
+	}
+	else
+	{ 
+        header('Location: ../');	
+    } 
+?>

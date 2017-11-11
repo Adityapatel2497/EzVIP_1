@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	if(isset($_SESSION['username']))
-	{
+	{		
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,9 @@
 
 					<form action="insert.php" method="POST" >
 					<table align="center">
-						<tr><td class="td" align="center"> Package Name :*</td><td><input type="text" title="You Can Only Input Alphabetic Values!s" placeholder="Enter Package Name." name="pname" pattern="[A-Za-z]{1,}" required></input></td></tr>
+						<tr><td class="td" align="center"> Package Name :*</td><td><input type="text" title="You Can Only Input Alphabetic Values!s" placeholder="Enter Package Name." name="pname" pattern="[A-Za-z] {1 , }" required></input></td></tr>
+						<tr><td align="justify">Short Description :*</td><td><textarea name="sd" placeholder="Enter Short Description of Quotation." style="width: 100%;height: 100px;padding: 12px 20px;box-sizing: border-box;resize: none;position: relative;background-color: #e9ece5;font-size: 15px;color: #3b3a36;border: 0px;border-radius:  18px 18px 18px 18px;" maxlength="50"></textarea></td></tr>
+						<tr><td align="justify">Long Description :*</td><td><textarea name="ld" placeholder="Enter Long Description of Quotation." style="width: 100%;height: 100px;padding: 12px 20px;box-sizing: border-box;resize: none;position: relative;background-color: #e9ece5;font-size: 15px;color: #3b3a36;border: 0px;border-radius:  18px 18px 18px 18px;" maxlength="50"></textarea></td></tr>
 						<tr><td class="td" align="center"> List of Clubs :*</td>
 						<td>
 								<?php 
@@ -76,15 +78,13 @@
 										                <option value="'.$row['vname'].'">'.$row['vname'].'</option>';
 										             }
 
-										             echo '</select>';
-										            }
+										             echo '</select>';			            
+						}
 										            catch (PDOException $e)
 										            {   
 										                die("Some problem getting data from database !!!" . $e->getMessage());
 										            }
-										    ?>
-						</td>
-						</tr>
+						?>
 						<tr><td class="td" align="center"> List of Artists :*</td>
 						<td>
 							<?php 
@@ -93,7 +93,7 @@
 
 										        try
 										        {
-										                 $sql = "select vname from vendor where vtype = 'a'";
+										                 $sql = "select vname, rate from vendor where vtype = 'a'";
 										                 $result = $db->query($sql);
 										                 $result->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -104,9 +104,11 @@
 
 										                echo '<option value="" hidden>Select Artist</option>
 										                <option value="'.$row['vname'].'">'.$row['vname'].'</option>';
+										                
 										             }
 
 										             echo '</select>';
+
 										            }
 										            catch (PDOException $e)
 										            {   
@@ -114,8 +116,16 @@
 										            }
 										    ?>
 						</td></tr>
-						<tr><td class="td" align="center"> Set Commission % :*</td><td><input type="text" name="com" pattern="[0-9]{1,3}" placeholder="Set Charges For Package." title="You can only enter numric values." required></input></td></tr>
-						<tr><td></td><td><input type="submit" name="ADD" value="CREATE"></input> <input type="reset" name="reset"  value="RESET"></input></td></tr> 
+						<tr>
+						<td class="td" align="center"> Set Commission % :*</td>
+						<td>
+							<input type="text" name="com" pattern="[0-9]{1,3}" placeholder="Set Charges For Package." title="You can only enter numric values." required>
+							</input>
+						</td>
+					</tr>
+						<tr>
+						<td></td>
+						<td><input type="submit" name="ADD" value="CREATE"></input> <input type="reset" name="reset"  value="RESET"></input></td></tr> 
 					</table>
 				</form>		
 </center>

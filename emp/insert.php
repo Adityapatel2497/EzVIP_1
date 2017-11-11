@@ -12,9 +12,12 @@ try
 	if (isset($_POST['ADD']))
 		{
 		$pname = $_POST['pname'];
-		$club = $_POST['clubs'];
-		$artist = $_POST['artists'];
+		$sd = $_POST['sd'];
+		$ld = $_POST['ld'];
+		$club = $_POST['club'];
+		$artist = $_POST['artist'];
 		$com = $_POST['com'];
+		
 		
 			$query = $conn->prepare( "SELECT `pname` FROM `package` WHERE `pname` = ?" );			
 			$query->bindValue( 1, $pname );
@@ -28,8 +31,11 @@ try
 			}
 			else{
 				// PDO Style Insert
-				$sql = "INSERT INTO `package` VALUES 
-					(NULL,'$pname','$club','$artist','$com','2000')";
+				$sql = "INSERT INTO `package` VALUES
+				 (NULL,'$pname','$sd','$ld','$club','$artist','$com',(((SELECT rate as club from vendor WHERE vname='$club')+(SELECT rate as artist FROM vendor WHERE vname='$artist'))*($com/100)),
+						 ((((SELECT rate as club from vendor WHERE vname='$club')+(SELECT rate as artist FROM vendor WHERE vname='$artist'))*($com/100))
+ 						+((SELECT rate as club from vendor WHERE vname='$club')+(SELECT rate as artist FROM vendor WHERE vname='$artist'))))";
+
 						if ($conn->query($sql))
 						{
 							echo "<script language='javascript'>alert('Package Succesfully Created!!');
@@ -54,38 +60,34 @@ try
 		$guest = $_POST['guest'];
 		$date = $_POST['date'];
 		$time = $_POST['time'];
+		$sd = $_POST['sd'];
+		$ld = $_POST['ld'];
 
-		
-			$query = $conn->prepare( "SELECT club,artist FROM party WHERE `date` = '$date'  AND `time` = '$time'" );			
-			$query->execute();
-			if($query)
-			{	
-				echo "<script language='javascript'>alert('This Party is already registered');
-				window.location.href='party.php';
-				 </script>";
-
-			}
-			else{
 				// PDO Style Insert
 				$sql = "INSERT INTO `party` VALUES 
-					(NULL,'$club','$artist','$charge','$guest','$date','$time')";
+					(NULL,'$sd','$ld','$club','$artist','$charge','$guest','$date','$time')";
 						if ($conn->query($sql))
 						{
-							echo "<script language='javascript'>alert('Package Succesfully Created!!');
+							$query = $conn->prepare( "SELECT club,artist FROM party WHERE `date` = '$date'  AND `time` = '$time'" );			
+									$query->execute();
+							if($query)
+								{	
+									echo "<script language='javascript'>alert('This Party is already registered');
+									window.location.href='party.php';
+									 </script>";
+								}
+							else{
+								echo "<script language='javascript'>alert('Package Succesfully Created!!');
 							window.location.href='party.php';
 					 		</script>";
+							}	
 						}
 			  			else
 						{
-							echo "<script language='javascript'>alert('Package Fail to Created!!');
-							window.location.href='party.php';
-					 		</script>";
+							echo 'fuck off';	
 						}
-						
-			}
-			}
-		}
-
+			}	
+			}		
 	catch(PDOException $e)
 		{
 			echo "Connection failed: " . $e->getMessage();
